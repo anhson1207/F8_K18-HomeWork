@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Submit</title>
+</head>
+<body>
+<ul>
+    <li><a href="../index.html">Về trang chủ</a></li>
+    <li><a href="./courses.html">Danh sách khoá học</a></li>
+    <li><a href="./lab.html">Phòng thí nghiệm</a></li>
+    <li><a href="./contact.html">Liên hệ</a></li>
+    <li><a href="./about.html">Giới thiệu</a></li>
+</ul>
+
+
+<form action="https://api-gateway.fullstack.edu.vn/action_page.php" method="post">
+    <label for="fullName">Họ và tên</label>
+    <input type="text" placeholder="Nhập họ tên" value="Nguyễn Văn A" id="fullName" name="fullName">
+    <label for="email">Email</label>
+    <input type="email" placeholder="Nhập email"  id="email" name="email">
+    <label for="password">Mật khẩu</label>
+    <input type="password" placeholder="Nhập mật khẩu" id="password" name="password">
+    <label for="age">Tuổi</label>
+    <input type="number" id="age" name="age">
+    <select name="category">
+        <option>HTML</option>
+        <option value="css basics">CSS</option>
+        <option value="javascript">JS</option>
+    </select>
+    <input type="submit" value="Gửi">
+
+</form>
+</body>
+</html>

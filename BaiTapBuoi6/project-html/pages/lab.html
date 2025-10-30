@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Phòng thí nghiệm</title>
+</head>
+<body>
+
+<ul>
+    <li><a href="../index.html">Về trang chủ</a></li>
+    <li><a href="./courses.html">Danh sách khoá học</a></li>
+    <li><a href="./submit.html">Trang gửi Form</a></li>
+    <li><a href="./contact.html">Liên hệ</a></li>
+    <li><a href="./about.html">Giới thiệu</a></li>
+</ul>
+
+<form action="./lab.html" method="GET">
+
+    <input type="text" name="q" placeholder="Tìm kiếm...">
+    <p>Trình độ:</p>
+    <label for="beginner">Beginner</label>
+    <input type="checkbox" name="level" value="Beginner" id="beginner">
+    <label for="intermediate">Intermediate</label>
+
+    <input type="checkbox" name="level" value="Intermediate" id="intermediate">
+    <label for="advanced">Advanced</label>
+
+    <input type="checkbox" name="level" value="Advanced" id="advanced">
+    <p>Hình thức:</p>
+    <label for="online">Online</label>
+    <input type="radio" name="mode" id="online">
+    <label for="offline">Offline</label>
+    <input type="radio" name="mode" id="offline">
+    <br>
+    <span>Danh mục:</span>
+    <select name="category">
+        <option value="front-end">
+            Front-end
+        </option>
+        <option value="back-end">
+            Back-end
+        </option>
+        <option value="devops">
+            Devops
+        </option>
+    </select>
+    <input type="submit">
+    <input type="reset">
+</form>
+</body>
+</html>
