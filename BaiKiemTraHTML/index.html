@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 2: Phân nhóm các thuật toán Machine Learning</title>
+</head>
+<body>
+<h1>Bài 2: Phân nhóm các thuật toán Machine Learning</h1>
+<p><em>Dec 27, 2016</em></p>
+
+<p>Có hai cách phổ biến phân nhóm các thuật toán Machine learning. Một là dựa trên phương thức học (learning style), hai là dựa trên chức năng (function) của mỗi thuật toán.</p>
+
+<span><b>Trong trang này:</b></span>
+<ul>
+    <li><a href="#method">1. Phân nhóm dựa trên phương thức học</a>
+        <ul>
+            <li><a href="#supervised">Supervised Learning (Học có giám sát)</a>
+                <ul>
+                    <li><a href="#classification">Classification (Phân loại)</a></li>
+                    <li><a href="#regression">Regression (Hồi quy)</a></li>
+                </ul>
+            </li>
+            <li><a href="#unsupervised">Unsupervised Learning (Học không giám sát)</a>
+                <ul>
+                    <li><a href="#clustering">Clustering (phân nhóm)</a></li>
+                    <li><a href="#association">Association</a></li>
+                </ul>
+            </li>
+            <li><a href="#semi-supervised">Semi-Supervised Learning (Học bán giám sát)</a></li>
+            <li><a href="#reinforcement">Reinforcement Learning (Học Củng Cố)</a></li>
+        </ul>
+    </li>
+
+    <li><a href="#">2. Phân nhóm dựa trên chức năng</a>
+        <ul>
+            <li><a href="#">Regression Algorithms</a></li>
+            <li><a href="#">Classification Algorithms</a></li>
+            <li><a href="#">Instance-based Algorithms</a></li>
+            <li><a href="#">Regularization Algorithms</a></li>
+            <li><a href="#">Bayesian Algorithms</a></li>
+            <li><a href="#">Clustering Algorithms</a></li>
+            <li><a href="#">Artificial Neural Network Algorithms</a></li>
+            <li><a href="#">Dimensionality Reduction Algorithms</a></li>
+            <li><a href="#">Ensemble Algorithms</a></li>
+        </ul>
+    </li>
+
+    <li><a href="#">3. Tài liệu tham khảo</a></li>
+</ul>
+
+<h2 id="method">1. Phân nhóm dựa trên phương thức học</h2>
+<p>Theo phương thức học, các thuật toán Machine Learning thường được chia làm 4 nhóm: Supervised learning, Unsupervised learning, Semi-supervised learning và Reinforcement learning. <em>Có một số cách phân nhóm không có Semi-supervised learning hoặc Reinforcement learning.</em></p>
+
+<h3 id="supervised">Supervised Learning (Học có giám sát)</h3>
+<p>Supervised learning là thuật toán dự đoán đầu ra (outcome) của một dữ liệu mới (new input) dựa trên các cặp <em>(input, outcome)</em> đã biết từ trước. Cặp dữ liệu này còn được gọi là <em>(data, label)</em>, tức (dữ liệu, nhãn). Supervised learning là nhóm phổ biến nhất trong các thuật toán Machine Learning.</p>
+
+<p>
+    Một cách toán học, Supervised learning là khi chúng ta có một tập hợp biến đầu vào
+    <b>X = {x&#8321;, x&#8322;, ..., x<sub>n</sub>}</b>
+    và một tập hợp nhãn tương ứng
+    <b>Y = {y&#8321;, y&#8322;, ..., y<sub>n</sub>}</b>,
+    trong đó <i>x<sub>i</sub></i>, <i>y<sub>i</sub></i> là các vector.
+    Các cặp dữ liệu biết trước (<i>x<sub>i</sub></i>, <i>y<sub>i</sub></i>) &isin; X &times; Y được gọi là tập
+    <b>training data</b> (dữ liệu huấn luyện).
+    Từ tập training data này, chúng ta cần tạo ra một hàm số ánh xạ mỗi phần tử từ tập X sang một phần tử (xấp xỉ) tương ứng của tập Y:
+</p>
+
+<p align="center">
+    y<sub>i</sub> &asymp; f(x<sub>i</sub>), &nbsp;&forall;i = 1, 2, ..., N
+</p>
+
+<p>
+    Mục đích là xấp xỉ hàm số f thật tốt để khi có một dữ liệu x mới, chúng ta có thể tính được nhãn tương ứng của nó y = f(x).
+</p>
+
+<p><b>Ví dụ 1:</b> Trong nhận dạng chữ viết tay, ta có ảnh của hàng nghìn ví dụ của mỗi chữ số được viết bởi nhiều người khác nhau.
+    Chúng ta đưa các bức ảnh này vào trong một thuật toán và chỉ cho nó biết mỗi bức ảnh tương ứng với chữ số nào.
+    Sau khi thuật toán tạo ra mô hình, tức một hàm số mà đầu vào là một bức ảnh và đầu ra là một chữ số, khi nhận được một bức ảnh mới mà mô hình
+    <b>chưa nhìn thấy bao giờ</b>, nó sẽ dự đoán bức ảnh đó chứa chữ số nào.
+</p>
+<img src="data:image/jpeg;base64,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" alt="logof8">
+
+<p align="center">
+    <span><a href="#">MNIST:</a> bộ cơ sở dữ liệu của chữ số viết tay</span><br>
+    <small>(Nguồn: <a href="#">Simple Neural Network implementation in Ruby</a>)</small>
+</p>
+
+<p>
+    Ví dụ này khá giống với cách học của con người khi còn nhỏ.
+    Ta đưa bảng chữ cái cho một đứa trẻ và chỉ cho chúng đâu là chữ A, đâu là chữ B.
+    Sau một vài lần được dạy thì trẻ có thể nhận biết được đâu là chữ A, đâu là chữ B trong một cuốn sách mà chúng chưa nhìn thấy bao giờ.
+</p>
+
+<p>
+    <b>Ví dụ 2:</b> Thuật toán dò các khuôn mặt trong một bức ảnh đã được phát triển từ rất lâu.
+    Thời gian đầu, Facebook sử dụng thuật toán này để chỉ ra các khuôn mặt trong một bức ảnh và yêu cầu người dùng <i>tag friends</i> - tức gắn nhãn cho mỗi khuôn mặt.
+    Số lượng cặp dữ liệu (khuôn mặt, tên người) càng lớn, độ chính xác ở những lần tự động tag tiếp theo sẽ càng lớn.
+</p>
+
+<p>
+    <b>Ví dụ 3:</b> Bản thân thuật toán dò tìm các khuôn mặt trong 1 bức ảnh cũng là một thuật toán của Supervised learning
+    với training data (dữ liệu học) là hàng ngàn cặp (ảnh, mặt người) và (ảnh, không phải mặt người) được đưa vào.
+    Chú ý là dữ liệu này chỉ phân biệt <i>mặt người</i> và <i>không phải mặt người</i> mà không phân biệt khuôn mặt của những người khác nhau.
+</p>
+
+<p>
+    Thuật toán supervised learning còn được tiếp tục chia nhỏ ra thành hai loại chính:
+</p>
+
+<h3 id="classification">Classification (Phân loại)</h3>
+
+<p>
+    Một bài toán được gọi là <b>classification</b> nếu các <i>label</i> của <i>input data</i> được chia thành một số hữu hạn nhóm.
+    Ví dụ: Gmail xác định xem một email có phải là spam hay không; các hãng tín dụng xác định xem một khách hàng có khả năng thanh toán nợ hay không.
+    Ba ví dụ trên thuộc dạng bài toán này.
+</p>
+
+<h3 id="regression">Regression (Hồi quy)</h3>
+
+<p>
+    (Tiếng Việt dịch là <i>Hồi quy</i>, tôi không thích cách dịch này vì bản thân không hiểu nó nghĩa là gì.)
+</p>
+
+<p>
+    Nếu <i>label</i> không được chia thành các nhóm mà là một giá trị thực cụ thể.
+    Ví dụ: một căn nhà rộng <i>x</i> m&sup2;, có <i>y</i> phòng ngủ và cách trung tâm thành phố <i>z</i> km sẽ có giá là bao nhiêu?
+</p>
+
+<p>
+    Gần đây <a href="#">Microsoft có một ứng dụng dự đoán giới tính và tuổi dựa trên khuôn mặt</a>.
+    Phần dự đoán giới tính có thể coi là thuật toán <b>Classification</b>,
+    phần dự đoán tuổi có thể coi là thuật toán <b>Regression</b>.
+    Chú ý rằng phần dự đoán tuổi cũng có thể coi là <b>Classification</b> nếu ta coi tuổi là một số nguyên dương không lớn hơn 150,
+    chúng ta sẽ có 150 class (lớp) khác nhau.
+</p>
+
+<h3 id="unsupervised">Unsupervised Learning (Học không giám sát)</h3>
+
+<p>
+    Trong thuật toán này, chúng ta không biết được <i>outcome</i> hay <i>nhãn</i> mà chỉ có dữ liệu đầu vào.
+    Thuật toán unsupervised learning sẽ dựa vào cấu trúc của dữ liệu để thực hiện một công việc nào đó,
+    ví dụ như phân nhóm (clustering) hoặc giảm số chiều của dữ liệu (dimension reduction) để thuận tiện trong việc lưu trữ và tính toán.
+</p>
+
+<p>
+    Một cách toán học, Unsupervised learning là khi chúng ta chỉ có dữ liệu vào
+    <b>X</b> mà không biết nhãn <b>Y</b> tương ứng.
+</p>
+
+<p>
+    Những thuật toán loại này được gọi là Unsupervised learning vì không giống như Supervised learning,
+    chúng ta không biết câu trả lời chính xác cho mỗi dữ liệu đầu vào.
+    Giống như khi ta học, không có thầy cô giáo nào chỉ cho ta biết đó là chữ A hay chữ B.
+    Cụm <i>không giám sát</i> đặt tên theo nghĩa này.
+</p>
+
+<p>
+    Các bài toán Unsupervised learning được tiếp tục chia nhỏ ra thành hai loại:
+</p>
+
+<h4 id="clustering">Clustering (Phân nhóm)</h4>
+
+<p>
+    Một bài toán phân nhóm toàn bộ dữ liệu <b>X</b> thành các nhóm nhỏ dựa trên sự liên quan giữa các dữ liệu trong mỗi nhóm.
+    Ví dụ: phân nhóm khách hàng dựa trên hành vi mua hàng.
+    Điều này cũng giống như việc ta đưa cho một đứa trẻ rất nhiều mảnh ghép với các hình thù và màu sắc khác nhau,
+    ví dụ tam giác, vuông, tròn với màu xanh và đỏ, sau đó yêu cầu trẻ phân chúng thành từng nhóm.
+    Mặc dù không có trẻ biết mảnh nào tương ứng với hình nào hoặc màu nào, nhiều khả năng chúng vẫn có thể phân loại các mảnh ghép theo mẫu hoặc hình dạng.
+</p>
+
+<h4 id="association">Association</h4>
+
+<p>
+    Là bài toán khi chúng ta muốn khám phá ra một quy luật dựa trên nhiều dữ liệu cho trước.
+    Ví dụ: những khách hàng mua quần áo thường có xu hướng mua thêm đồ hoặc thắt lưng;
+    những khách đã xem phim <i>Spider Man</i> thường có xu hướng xem thêm phim <i>Bat Man</i>,
+    dựa vào đó tạo ra một hệ thống gợi ý khách hàng (Recommendation System),
+    thúc đẩy nhu cầu mua sắm.
+</p>
+
+<h3 id="semi-supervised">Semi-Supervised Learning (Học bán giám sát)</h3>
+
+<p>
+    Các bài toán khi chúng ta có một lượng lớn dữ liệu
+    X
+    nhưng chỉ một phần trong chúng được gán nhãn được gọi là Semi-Supervised Learning. Những bài toán thuộc nhóm này nằm giữa hai nhóm được nêu bên trên.
+</p>
+<p>Một ví dụ điển hình của nhóm này là chỉ có một phần ảnh hoặc văn bản được gán nhãn (ví dụ bức ảnh về người, động vật hoặc các văn bản khoa học, chính trị) và phần lớn các bức ảnh/văn bản khác chưa được gán nhãn được thu thập từ internet. Thực tế cho thấy rất nhiều các bài toán Machine Learning thuộc vào nhóm này vì việc thu thập dữ liệu có nhãn tốn rất nhiều thời gian và có chi phí cao. Rất nhiều loại dữ liệu thậm chí cần phải có chuyên gia mới gán nhãn được (ảnh y học chẳng hạn). Ngược lại, dữ liệu chưa có nhãn có thể được thu thập với chi phí thấp từ internet.</p>
+<h3 id="reinforcement">Reinforcement Learning (Học Củng Cố)</h3>
+<p>Reinforcement learning là các bài toán giúp cho một hệ thống tự động xác định hành vi dựa trên hoàn cảnh để đạt được lợi ích cao nhất (maximizing the performance). Hiện tại, Reinforcement learning chủ yếu được áp dụng vào Lý Thuyết Trò Chơi (Game Theory), các thuật toán cần xác định nước đi tiếp theo để đạt được điểm số cao nhất.</p>
+<img src="https://machinelearningcoban.com/assets/categories/alphago.jpeg" alt="anh co vay">
+
+<p align="center">
+    <span>AlphaGo chơi cờ vây với Lee Sedol. AlphaGo là một ví dụ của Reinforcement learning.</span><br>
+    <small>(Nguồn: <a href="#">AlphaGo AI Defeats Sedol Again, With 'Near Perfect Game')</a>)</small>
+</p>
+
+<p>
+    <b>Ví dụ 1:</b>
+    <a href="#">AlphaGo gần đây nổi tiếng với việc chơi cờ vây thắng cả con người. Cờ vây được xem là có độ phức tạp cực kỳ cao</a>
+    với tổng số nước đi là xấp xỉ 10<sup>761</sup>, so với cờ vua là 10<sup>120</sup> và tổng số nguyên tử trong toàn vũ trụ là khoảng 10<sup>80</sup>!!
+    Vì vậy, thuật toán phải chọn ra 1 nước đi tối ưu trong số hàng nhiều tỉ tỉ lựa chọn, và tất nhiên, không thể áp dụng thuật toán tương tự như
+    <a href="#">IBM Deep Blue</a> (IBM Deep Blue đã thắng con người trong môn cờ vua 20 năm trước).Về cơ bản, AlphaGo bao gồm các thuật toán thuộc cả Supervised learning và Reinforcement learning. Trong phần Supervised learning, dữ liệu từ các ván cờ do con người chơi với nhau được đưa vào để huấn luyện. Tuy nhiên, mục đích cuối cùng của AlphaGo không phải là chơi như con người mà phải thậm chí thắng cả con người. Vì vậy, sau khi học xong các ván cờ của con người, AlphaGo tự chơi với chính nó với hàng triệu ván chơi để tìm ra các nước đi mới tối ưu hơn. Thuật toán trong phần tự chơi này được xếp vào loại Reinforcement learning. (Xem thêm tại
+    <a href="#">Google DeepMind’s AlphaGo: How it works</a>).
+</p>
+
+<p>
+    <b>Ví dụ 2:</b>
+    <a href="#">Huấn luyện cho máy tính chơi game Mario</a>. Đây là một chương trình thú vị dạy máy tính chơi game Mario. Game này đơn giản hơn cờ vây vì tại một thời điểm, người chơi chỉ phải bấm một số lượng nhỏ các nút (di chuyển, nhảy, bắn đạn) hoặc không cần bấm nút nào. Đồng thời, phản ứng của máy cũng đơn giản hơn và lặp lại ở mỗi lần chơi (tại thời điểm cụ thể sẽ xuất hiện một chướng ngại vật cố định ở một vị trí cố định). Đầu vào của thuật toán là sơ đồ của màn hình tại thời điểm hiện tại, nhiệm vụ của thuật toán là với đầu vào đó, tổ hợp phím nào nên được bấm. Việc huấn luyện này được dựa trên điểm số cho việc di chuyển được bao xa trong thời gian bao lâu trong game, càng xa và càng nhanh thì được điểm thưởng càng cao (điểm thưởng này không phải là điểm của trò chơi mà là điểm do chính người lập trình tạo ra). Thông qua huấn luyện, thuật toán sẽ tìm ra một cách tối ưu để tối đa số điểm trên, qua đó đạt được mục đích cuối cùng là cứu công chúa.
+</p>
+<iframe width="600" height="400" src="https://www.youtube.com/embed/qv6UVOQ0F44" title="MarI/O - Machine Learning for Video Games" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+</body>
+</html>
