@@ -1,0 +1,128 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html{
+    font-size: 62.5%;
+}
+body{
+    font-family: Arial, Helvetica, sans-serif;
+}
+.landing_page{
+    width: 100vw;
+    height: 90vh;
+    background-image: url('https://images.unsplash.com/photo-1579547621706-1a9c79d5c9f1?q=80&w=2070&auto=format&fit=crop');
+       padding: 4rem;
+}
+.content{
+  text-align: center;
+  background-color: rgba(255, 255, 255, 0.4);  
+  border-radius: 1rem;
+  padding: 3rem 2rem;
+}
+.title{
+font-size: 6.4rem ;
+font-weight: 700;
+color: #1e293b;
+}
+.subtitle{
+    margin-top: 0.5rem;
+color: #c084fc;
+}
+.desc{
+    margin-top: 2rem;
+    font-size: 2rem;
+    font-weight: 400;
+    color: #1e293b;
+}
+.btn{
+    padding: 2rem 5rem;
+    background-color: #a855f7;
+    border:none;
+    border-radius: 3.5rem;
+    font-size: 1.8rem;
+    color: #ffffff;
+    margin-top: 4rem;
+    font-weight: 600;
+
+}
+.btn:hover{
+    cursor: pointer;
+    background-color: #9333ea;
+}
+.logo{
+    margin-top: 7rem;
+    margin-bottom: 2rem;
+}
+.avatar{
+    width: 5rem;
+    height: 5rem;
+    border-radius: 100rem;
+    border: 0.3rem solid rgba(192, 132, 252, 0.6);
+    margin-bottom: 1rem;
+}
+.logo p{
+    font-size: 2rem;
+    font-weight: 600;
+
+}
+.logo p strong{
+    color: #9c59f0;
+    font-weight: 700;
+}
+#focus_box{
+    margin-right: 0.8rem;
+}
+#focus_box:checked ~ .tip{
+    background-color: rgba(192, 132, 252, 0.35);
+    color: #6b21a8;
+}
+
+label{
+    font-size: 1.6rem;
+}
+.tip{
+    background-color: rgba(255, 255, 255, 0.4);
+    border-radius: 0.6rem;
+    padding: 2rem;
+    margin-top: 2rem;
+}
+.tip_title{
+    font-size: 2.2rem;
+    font-weight: 700;
+    margin-bottom: 1.2rem;
+
+}
+.tip_desc{
+    font-size: 1.8rem;
+    font-weight: 400;
+    color: #38416b;
+}
+.benefits{
+    margin-top: 2rem;
+    padding: 2rem 0;
+}
+.benefit_item{
+    font-size: 1.8rem;
+    font-weight: 600;
+    margin-right: 3rem;
+}
+.benefit_item img{
+    width: 2rem;
+    height: 2rem;
+}
+.footer{
+    background-color: rgba(255, 255, 255, 0.35);
+    margin-top: 3rem;
+    text-align: center;
+    border-top:0.1rem solid rgba(192, 132, 252, 0.6);
+
+
+}
+.footer p{
+font-size: 1.6rem;
+padding-top: 3rem;
+}
+
+
