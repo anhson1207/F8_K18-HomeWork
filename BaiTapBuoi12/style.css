@@ -10,17 +10,20 @@ html{
 }
 body{
     font-family: Arial, Helvetica, sans-serif;
+    position: relative;
 }
 .landing_page{
     width: 100vw;
     background-image: url('https://images.unsplash.com/photo-1579547621706-1a9c79d5c9f1?q=80&w=2070&auto=format&fit=crop');
        padding: 4rem;
+       position: relative;
 }
 .content{
   text-align: center;
   background-color: rgba(255, 255, 255, 0.4);  
   border-radius: 1rem;
   padding: 3rem 2rem;
+  position: relative;
 
 }
 .title{
@@ -138,7 +141,7 @@ label{
     height: 2rem;
 }
 .modal-study{
-    position: fixed;
+    position: absolute;
     left: 0;
     right: 0;
     top:50%;
@@ -216,7 +219,7 @@ label{
     text-decoration: underline;
 }
 .modal-advise{
-    position: fixed;
+    position: absolute;
     left: 0;
     right: 0;
     top:50%;
@@ -364,8 +367,8 @@ input[type="text"],input[type="tel"],input[type="email"]{
     border-bottom-right-radius:1rem ;
  }
 
-.modal-overlay{
-    position: fixed;
+.modal-overlay-study, .modal-overlay-advise{
+    position: absolute;
     inset: 0;
     background-color: rgba(0, 0, 0, 0.5);
     z-index: 999;
@@ -374,10 +377,10 @@ input[type="text"],input[type="tel"],input[type="email"]{
 input[id="modal-study"], input[id="modal-advise"],input[id="modal-study-close"],input[id="faq-1"],input[id="faq-2"],input[id="faq-3"]{
     display: none;
 }
-input[id="modal-study"]:checked ~ .modal-study ,input[id="modal-study"]:checked ~ .modal-overlay{
+input[id="modal-study"]:checked ~ .modal-study ,input[id="modal-study"]:checked ~ .modal-overlay-study{
     display: block;
 }
-input[id="modal-advise"]:checked ~ .modal-advise ,input[id="modal-advise"]:checked ~ .modal-overlay{
+input[id="modal-advise"]:checked ~ .modal-advise ,input[id="modal-advise"]:checked ~ .modal-overlay-advise{
     display: block;
 }
 input[id="faq-1"]:checked + .faq-item .faq-open{
