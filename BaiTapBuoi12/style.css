@@ -342,6 +342,10 @@ input[type="text"],input[type="tel"],input[type="email"]{
     color: #1e293b;
     text-align: left;
         }
+.faq-question:hover{
+    background-color: rgba(192, 132, 252, 0.15);
+    cursor: pointer;
+}
 .faq-open{
     position: absolute;
     right: 3rem;
