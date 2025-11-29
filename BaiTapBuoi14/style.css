@@ -1,0 +1,121 @@
+*{
+    padding: 0;
+    margin: 0;box-sizing: border-box;
+}
+
+html{
+    font-size: 62.5%;
+}
+body{
+    font-family: Arial, Helvetica, sans-serif;
+}
+header{
+    border: 0.1rem solid #dddddd;
+    position: relative;
+}
+img{
+    width: 5rem;
+    height: 5rem;
+    margin: 1rem 4rem;
+}
+.navbar{
+    display: inline-block;
+    position: absolute;
+    top: 1rem;
+}
+.list{
+    list-style: none;
+
+}
+.list_item{
+        display: inline-block;
+        position: relative;
+       
+}
+.list_item a{
+    text-decoration: none;
+    color: #333333;
+    font-size: 1.6rem;
+     padding: 2rem;
+     display: inline-block;
+     font-weight: 700;
+}
+.list_item a:hover{
+    color: #d62828;
+}
+.list_item:hover .sub_menu{
+    display: block;
+}
+.list_item .arrow-down{
+    font-size: 0.8rem;
+    font-weight: 400;
+    position: absolute;
+    top:2.5rem;
+    color: #555555;
+}
+.sub_menu{
+    list-style: none;
+    background-color: #ffffff;
+    border: 0.1rem solid #dddddd;
+    display: block;
+    width: 20rem;
+    position: absolute;
+    top: 5rem;
+    display: none;
+
+}
+.sub_menu_item{
+    padding: 0.5rem;
+}
+.sub_menu_item:hover{
+    background-color: #f5f5f5;
+    cursor: pointer;
+}
+.sub_menu_item:hover >a{
+    color: #d62828;
+}
+.sub_menu_item a{
+    text-decoration: none;
+    color: #333333;
+    font-size: 1.6rem;
+     padding: 1rem;
+     font-weight: 400;
+}
+.sub_menu_item .arrow-right{
+    font-size: 0.8rem;
+    font-weight: 400;
+    color: #555555;
+    position: absolute;
+    right: 2rem;
+    top:2rem;
+}
+.sub_menu .sub_menu_item{
+    position: relative;
+}
+.sub-submenu{
+    list-style: none;
+    background-color: #ffffff;
+    border: 0.1rem solid #dddddd;
+    display: block;
+    width: 20rem;
+    position: absolute;
+    left: 100%;
+    top:0;
+    display: none;
+}
+.sub-submenu_item:hover{
+    background-color: #f5f5f5;
+    cursor: pointer;
+}
+
+.sub-submenu .sub_menu_item a{
+text-decoration: none;
+color: #333333;
+    font-size: 1.6rem;
+     padding: 1rem;
+     font-weight: 400;
+}
+.sub_menu_item:hover .sub-submenu{
+    display: block;
+}
+
