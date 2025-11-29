@@ -30,18 +30,19 @@ img{
 .list_item{
         display: inline-block;
         position: relative;
-       
+        padding: 2rem;
 }
 .list_item a{
     text-decoration: none;
     color: #333333;
     font-size: 1.6rem;
-     padding: 2rem;
      display: inline-block;
      font-weight: 700;
+     padding-bottom: 1rem;
 }
-.list_item a:hover{
+.list_item:hover > a{
     color: #d62828;
+    border-bottom: 2px solid #d62828;
 }
 
 .list_item:hover .sub_menu{
@@ -52,6 +53,7 @@ img{
     font-weight: 400;
     position: absolute;
     top:2.5rem;
+    right: -0.2rem;
     color: #555555;
 }
 .sub_menu{
@@ -109,13 +111,17 @@ img{
     cursor: pointer;
 }
 
-.sub-submenu .sub_menu_item a{
+.sub-submenu .sub-submenu_item a{
 text-decoration: none;
 color: #333333;
     font-size: 1.6rem;
      padding: 1rem;
      font-weight: 400;
 }
+.sub-submenu_item:hover >a{
+    color: #d62828;
+}
+
 .sub_menu_item:hover .sub-submenu{
     display: block;
 }
