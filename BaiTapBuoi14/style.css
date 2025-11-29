@@ -43,6 +43,7 @@ img{
 .list_item a:hover{
     color: #d62828;
 }
+
 .list_item:hover .sub_menu{
     display: block;
 }
@@ -62,7 +63,7 @@ img{
     position: absolute;
     top: 5rem;
     display: none;
-
+    left: 2rem;
 }
 .sub_menu_item{
     padding: 0.5rem;
