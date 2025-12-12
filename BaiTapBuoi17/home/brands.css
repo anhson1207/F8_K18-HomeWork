@@ -1,0 +1,24 @@
+.brands--list{
+    margin-top: 100px;
+    display: flex;
+    align-items: center;
+    background: #fcfcfd;
+    padding: 30px;
+    border-radius: 12px;
+    border: 1px solid #f1f1f3;
+
+}
+.brands--item{
+    padding: 30px 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: calc(100% / 7);
+}
+.brands--item{
+    border-right:1px solid #f1f1f3 ;
+}
+.brands--item:last-child{
+    border-right: none;
+}
+

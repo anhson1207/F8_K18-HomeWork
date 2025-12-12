@@ -1,0 +1,103 @@
+.pricing{
+    margin-top: 168px;
+    margin-bottom: 150px;
+}
+.pricing-content{
+    background-color: #ffffff;
+    border-radius: 12px;
+    padding: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap:30px;
+}
+.pricing-card{
+    background-color: #fcfcfd;
+    border: 1px solid #f1f1f3;
+    border-radius: 12px;
+    padding: 50px 30px 30px 30px;
+    text-align: center;
+    width: 50%;
+}
+.pricing-card__header{
+    border-radius: 6px;
+    border: 1px solid #ffeacc;
+    background-color: #fff9f0;
+    padding: 12px 22px;
+    font-weight: 500;
+    font-size: 22px;
+    color:#262626;
+    text-align: center;
+    margin-bottom: 35px;
+}
+.pricing-card__price-value{
+    font-weight: 600;
+    font-size: 80px;
+    color: #262626;
+}
+.pricing-card__price-period{
+    font-weight: 500;
+    font-size: 20px;
+    color: #4c4c4d;
+}
+.pricing-card__features{
+    background-color: #ffffff;
+    border: 1px solid #f1f1f3;
+    padding: 40px;
+    border-top-left-radius: 14px;
+    border-top-right-radius: 14px;
+    margin-top: 35px;
+}
+.pricing-card__features-title{
+    font-weight: 500;
+    font-size: 20px;
+    color: #262626;
+    margin-bottom: 30px;
+}
+.pricing-features{
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+.pricing-feature{
+    list-style: none;
+    display: flex;
+    align-items: center;
+    border-radius: 8px;
+    border: 1px solid #f1f1f3;
+    padding: 14px;
+}
+.pricing-feature__text{
+    font-size: 18px;
+    font-weight: 400;
+    color:#4c4c4d;
+    margin-left: 12px;
+}
+.pricing-feature--available .pricing-feature__icon{
+    border-radius: 6px;
+    padding: 6px;
+    background-color: #fff4e5;
+    width: 32px;
+    height: 32px;
+}
+.pricing-feature--unavailable .pricing-feature__icon{
+    border-radius: 6px;
+    padding: 6px;
+    background-color: transparent;
+    width: 32px;
+    height: 32px;
+    border: 1px solid #f1f1f3;
+}
+.pricing-card__button{
+    border: none;
+    outline: none;
+    border-bottom-right-radius: 8px;
+    border-bottom-left-radius: 8px;
+    padding: 20px 24px;
+    background-color: #ff9500;
+    font-weight: 600;
+    font-size: 18px;
+    color: #ffffff;
+    width: 100%;
+}
+

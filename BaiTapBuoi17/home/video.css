@@ -1,0 +1,29 @@
+.video{
+    margin-top: 100px;
+    margin-bottom: 150px;
+    position: relative;
+
+}
+.video--img{
+    border-radius: 12px;
+    width: 100%;
+    height: 790px;
+    object-fit: cover;
+    position: relative;
+}
+.video--icon{
+    position: absolute;
+    inset: 0;
+    margin: auto;
+    width: 72px;
+    height: 72px;
+    border-radius: 68px;
+    padding: 14px;
+    background-color: rgba(255, 255, 255, 0.2);
+    border: 6px solid rgba(255, 255, 255, 0.3);
+}
+.video--icon img{
+position: absolute;
+left:30%;
+}
+
