@@ -75,13 +75,15 @@ justify-content: space-between;
 }
 .menu-drawer{
     position: fixed;
-    inset: 0 0 0 5%;
+    inset: 0 0 0 6%;
     width: 320px;
     background-color: #ffffff;
     z-index: 10;
     border-top-left-radius: 50px;
     border-bottom-left-radius: 50px;
     transform: translateX(100%);
+    opacity: 0;
+    visibility: hidden;
     transition: all 0.3s ease;
 }
 #menu-checkbox:checked ~ .menu-overlay{
@@ -90,6 +92,8 @@ justify-content: space-between;
 }
 #menu-checkbox:checked ~ .menu-drawer{
     transform: translateX(0);
+    opacity: 1;
+    visibility: visible;
 }
 .menu-drawer-header{
     display: flex;
