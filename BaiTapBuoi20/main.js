@@ -20,7 +20,7 @@ console.log("Updated b:", b)
 //Let change value after initialize variable
 //Const use when you don't want the variable to be reassigned, fixed value of variable
 const x=10
-x=20
+// x=20
 //This code wrong because const variable can't be reassigned
 //Section 3:Data type
 //"100" -> string
@@ -37,9 +37,12 @@ let student={
 }
 console.log(student);
 //Section 4:Type coercion
-console.log(Number("1000"));
-console.log(String(1000));
-console.log(String(true));
+let str="1000"
+let num=1000
+let bool=true
+console.log(Number(str), typeof str);
+console.log(String(num), typeof num);
+console.log(String(bool), typeof bool);
 //Section 5: Truthy / Falsy
 //Boolean(0)->false
 //Boolean(1)->true
