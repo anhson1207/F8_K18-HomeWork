@@ -19,17 +19,18 @@ console.log("Hello"-y);//Result 4
 //Result 2 explained:In the expression x - y, the - operator is used for subtraction. JavaScript attempts to convert both operands to numbers. Here, x is a string ("10") which can be converted to the number 10, and y is already a number (2). The subtraction is performed as 10 - 2, resulting in the number 8.
 //Result 4 explained:In the expression "Hello" - y, the - operator is used for subtraction. JavaScript tries to convert both operands to numbers. The string "Hello" cannot be converted to a valid number, so it results in NaN (Not-a-Number). Therefore, the result of the operation is NaN.
 //Task 3
-let age, mathScore,isVIP
-let canEnter= isVIP||(age>=10 && mathScore > 7)
+let age=9, mathScore=9,isVIP=true
 //test 1
 age =9
 mathScore=10
 isVIP=false
+let canEnter = isVIP || (age >= 10 && mathScore > 7);
 console.log("Test 1 - Can enter:", canEnter);//false
 //test 2
 age =9
 mathScore=10
 isVIP=true
+canEnter = isVIP || (age >= 10 && mathScore > 7);
 console.log("Test 2 - Can enter:", canEnter);//true
 //!(age<10) same as age>=10 because operator ! will negate the boolean value of expression inside the parentheses
 //Task 4
