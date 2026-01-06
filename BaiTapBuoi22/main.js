@@ -43,8 +43,13 @@ function getDaysInMonth(month){
 console.log(getDaysInMonth(7));
 //Lesson 3
 const n=10
-const checkNumberEvenOdd=n%2==0?"Even":"Odd"
-console.log(`The number ${n} is ${checkNumberEvenOdd}`);
+function isEvenNumber(n){
+    if(typeof n != 'number'){
+        return "Invalid number"
+    }
+    return n%2==0 ? "Even" : "Odd"
+}
+console.log(isEvenNumber(4));
 //Lesson 4
 const baseTicketPrice=100
 const discount=0.5
@@ -56,11 +61,11 @@ function getTicketPrice(age){
 }
 console.log(getTicketPrice(12));
 //Lesson 5
-function convertTemperature(celsius){
+function toFahrenheit(celsius){
     const fahrenheit=(celsius*1.8)+32
     return fahrenheit
 }
-console.log(convertTemperature(100));
+console.log(toFahrenheit(100));
 //Lesson 6
 function calculateElectricityBill(kWh){
     if(typeof kWh != 'number' || kWh <0){
