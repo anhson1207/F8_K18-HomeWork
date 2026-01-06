@@ -46,9 +46,15 @@ const n=10
 const checkNumberEvenOdd=n%2==0?"Even":"Odd"
 console.log(`The number ${n} is ${checkNumberEvenOdd}`);
 //Lesson 4
-const age=20
-const ticketPrice= age < 13 ? 5000:10000
-console.log(`The ticket price is ${ticketPrice}`);
+const baseTicketPrice=100
+const discount=0.5
+function getTicketPrice(age){
+    if(typeof age != 'number' || age <0){
+        return "Invalid age"
+    }
+    return age<13? `${baseTicketPrice*discount}k`:`${baseTicketPrice}k`
+}
+console.log(getTicketPrice(12));
 //Lesson 5
 function convertTemperature(celsius){
     const fahrenheit=(celsius*1.8)+32
