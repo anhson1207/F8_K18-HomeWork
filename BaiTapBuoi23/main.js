@@ -3,6 +3,9 @@
 //Check is triangle valid
 const a=3, b=4, c=5
 function checkTriangle(a,b,c){
+    if(typeof a!='number' || typeof b!='number' || typeof c!='number'){
+        return "Invalid type number"
+    }
     if(a<=0 ||b<=0 ||c<=0){
         return "Invalid side lengths"
     }
