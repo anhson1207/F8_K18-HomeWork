@@ -26,6 +26,7 @@ function checkTriangle(a,b,c){
 console.log(checkTriangle(a,b,c));
 //Task 2
 const n=20
+//Check perfect square
 function isPerfectSquare(n){
     if(typeof n!='number' || n<0){
         return "Invalid number"
