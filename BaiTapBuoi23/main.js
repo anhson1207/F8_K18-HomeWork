@@ -25,16 +25,17 @@ function checkTriangle(a,b,c){
 }
 console.log(checkTriangle(a,b,c));
 //Task 2
-const n=20
+const n=16
 //Check perfect square
-function isPerfectSquare(n){
+function checkPerfectSquare(n){
     if(typeof n!='number' || n<0){
         return "Invalid number"
     }
     const sqrtN=Math.sqrt(n)
-    if(sqrtN*sqrtN === n){
-        return `${n} is a perfect square`
+    if(sqrtN%1){
+        return `${n} is not a perfect square`;
     }
-    return `${n} is not a perfect square`
+        return `${n} is a perfect square`;
+    
 }
-console.log(isPerfectSquare(n));
+console.log(checkPerfectSquare(n));
