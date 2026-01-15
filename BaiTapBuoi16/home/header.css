@@ -1,0 +1,76 @@
+.header{
+    margin: 20px 30px;
+    position: fixed;
+    z-index: 9999;
+    background-color: #f7f7f8;
+}
+
+#header-top{
+    background-color: #ff9500;
+    height: 55px;
+    border-radius: 8px;
+    font-size: 18px;
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#header-top img {
+    margin-left: 23px;
+}
+#header--logo{
+    background-image: url('../images/Logo.svg');
+    background-color: #ff9500;
+    height: 54px;
+    width: 54px;
+    background-repeat: no-repeat;
+    background-position: center;
+    border-radius: 8px;
+}
+#header-bottom{
+    width: 1600px;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 0;
+    border-bottom: 1px solid #f1f1f3;
+}
+#header-bottom div{
+    display: flex;
+    align-items: center;
+}
+#header-bottom nav{
+    margin-left: 50px;
+}
+#header-bottom ul {
+    display: flex;
+    
+}
+#header-bottom ul li {
+    list-style: none;
+    padding: 14px 24px;
+    font-size: 18px;
+}
+#header-bottom ul li:first-child { 
+background-color: #f1f1f3;
+}
+#header--action{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+#header--action button{
+    padding: 14px 34px;
+    border: none;
+    outline: none;
+    border-radius: 8px;
+    font-size: 18px;
+    background-color: transparent;
+
+}
+#header--action button:last-child{
+    background-color: #ff9500;
+    color: #ffffff;
+}

@@ -146,7 +146,7 @@ body{
     margin-bottom: 80px;
 }
 .section-header__content{
-    /* width: 1177px; */
+    width: 1177px;
 }
 .section-header__title{
     font-weight: 600;

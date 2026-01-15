@@ -1,4 +1,4 @@
-//Asignment 20
+//Assignment 20
 //Section 1:Declare variables & console.log (basic)
 //1.Initialize 3 variables
 let name="Nguyen Anh Son"
