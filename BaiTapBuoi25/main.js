@@ -1,7 +1,7 @@
 //Assignment 25
 const products = [
     { id: 1, name: "iPhone", price: 2000 },
-    { id: 2, name: "Samsung", price: 15000 },
+    { id: 2, name: "Samsung", price: 1500 },
     { id: 3, name: "Xiaomi", price: 1000 },
     { id: 4, name: "Oppo", price: 1200 },
 ];
@@ -44,26 +44,28 @@ for(const order of orders){
         const product=findById(products, item.productId)
         if(product){
             totalPrice=product.price * item.quantity
-            if(priceMap[product.name]){
-                priceMap[product.name]+=totalPrice
+            if(priceMap[product.id]){
+                priceMap[product.id]+=totalPrice
             }else{
-                priceMap[product.name]=totalPrice
+                priceMap[product.id]=totalPrice
             }
-            product["revenue"] = priceMap[product.name];
+            product["revenue"] = priceMap[product.id];
         }
 
     }
 }
 const findProductMaxRevenue=(arr)=>{
-    let productMaxRevenue=arr[0]
-    for(let i=1;i<arr.length;i++){
-        if (arr[i].revenue > productMaxRevenue.revenue) {
-            productMaxRevenue=arr[i]
+    let maxRevenue=-Infinity
+    let maxKey=null
+    for(let i=0;i<arr.length;i++){
+        if (arr[i].revenue >maxRevenue) {
+            maxRevenue=arr[i].revenue
+            maxKey=i
         }
     }
-    return productMaxRevenue
+    return arr[maxKey]
 }
-// console.log(products);
+console.log(products);
 console.log(findProductMaxRevenue(products));
 
 
