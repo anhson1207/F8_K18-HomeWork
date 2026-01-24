@@ -26,6 +26,9 @@ const createOrder = (productId, orderQuantity) => {
     if (productId === null || orderQuantity === null) {
         return "Input cannot be null";
     }
+    if(typeof productId !== "number" || typeof orderQuantity !== "number"){
+        return "Input must be number"
+    }
     //get product from products
     const product = products.find((p) => p.id === productId);
     if (!product) {
@@ -50,18 +53,22 @@ console.log(createOrder(2, 8));
 console.log(createOrder(3, 6));
 
 const updateOrder = (orderId, quantity) => {
+    //check quantity
+    if(quantity<=0){
+        return "Quantity must be greater than 0"
+    }
     //get order from orders
     const order = orders.find((o) => o.id === orderId);
     //check if order not exist
     if (!order) {
-        return "Order not found";
+        return "Not found";
     }
     //get product from products
     const product = products.find((p) => p.id === order.productId);
     //check if order not exist
 
     if (!product) {
-        return "Product not found";
+        return "Not found";
     }
     //calculate diff
     const diff = quantity - order.quantity;
@@ -76,10 +83,6 @@ const updateOrder = (orderId, quantity) => {
 console.log(updateOrder(1, 8));
 console.log(orders);
 const deleteOrder = (orderId) => {
-    //check input
-    if (orderId === null || typeof orderId !== "number") {
-        return "Not found";
-    }
     //get order from orders
     const order = orders.find((o) => o.id === orderId);
     //check if order not exist
