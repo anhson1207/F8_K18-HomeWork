@@ -13,17 +13,16 @@ const partTime: PartTimeI = {
     salary: 20,
     hoursWorked: 40,
 };
-//deep copy
-const copy = JSON.parse(JSON.stringify(partTime));
-copy.hoursWorked = 45;
-// console.log(copy);
+//shallow copy
+const copy = { ...partTime, hoursWorked: 45 };
+//console.log(copy);
 //2
 //class and interface
 interface Employee {
     id: number;
     name: string;
     salary: number;
-    getSalary(): number;
+    getSalary: () => number;
 }
 class FullTimeEmployee implements Employee {
     id: number;
