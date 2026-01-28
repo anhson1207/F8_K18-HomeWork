@@ -51,6 +51,12 @@ class Developer extends Employee {
         this.overtimeHours = overtimeHours;
         this.setSalary(salary);
     }
+    getOvertimeHours(): number {
+        return this.overtimeHours;
+    }
+    setOvertimeHours(overtimeHours: number): void {
+        this.overtimeHours = overtimeHours;
+    }
     setSalary(salary: number): void {
         if (salary <= 0) {
             throw new Error("Salary must greater than 0");
@@ -69,6 +75,12 @@ class Manager extends Employee {
         this.teamSize = teamSize;
         this.setSalary(salary);
     }
+    getTeamSize(): number {
+        return this.teamSize;
+    }
+    setTeamSize(teamSize: number): void {
+        this.teamSize = teamSize;
+    }
     setSalary(salary: number): void {
         if (salary <= 0) {
             throw new Error("Salary must greater than 0");
@@ -81,8 +93,8 @@ class Manager extends Employee {
 }
 //test
 const developer = new Developer(1, "Nguyen Van A", 1000000, 5);
-console.log(developer.calculateSalary());//1250000
+console.log(developer.calculateSalary()); //1250000
 developer.setSalary(1500000);
-console.log(developer.calculateSalary());//1750000
+console.log(developer.calculateSalary()); //1750000
 const manager = new Manager(2, "Nguyen Van B", 2000000, 10);
-console.log(manager.calculateSalary());//4000000
+console.log(manager.calculateSalary()); //4000000
