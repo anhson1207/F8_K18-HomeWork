@@ -25,13 +25,13 @@ abstract class Employee implements EmployeeI {
     getName(): string {
         return this.name;
     }
-    setName(name: string) {
+    setName(name: string): void {
         this.name = name;
     }
     getSalary(): number {
         return this.salary;
     }
-    setSalary(salary: number) {
+    setSalary(salary: number): void {
         if (salary <= 0) {
             throw new Error("Salary must greater than 0");
         }
@@ -57,14 +57,9 @@ class Developer extends Employee {
     setOvertimeHours(overtimeHours: number): void {
         this.overtimeHours = overtimeHours;
     }
-    setSalary(salary: number): void {
-        if (salary <= 0) {
-            throw new Error("Salary must greater than 0");
-        }
-        this.salary = salary + this.overtimeHours * 50000;
-    }
+
     calculateSalary(): number {
-        return this.salary;
+        return (this.salary = this.salary + this.overtimeHours * 50000);
     }
 }
 //create class Manager extends Employee
@@ -81,14 +76,9 @@ class Manager extends Employee {
     setTeamSize(teamSize: number): void {
         this.teamSize = teamSize;
     }
-    setSalary(salary: number): void {
-        if (salary <= 0) {
-            throw new Error("Salary must greater than 0");
-        }
-        this.salary = salary + this.teamSize * 200000;
-    }
+
     calculateSalary(): number {
-        return this.salary;
+        return (this.salary = this.salary + this.teamSize * 200000);
     }
 }
 //test
