@@ -82,9 +82,10 @@ class Manager extends Employee {
     }
 }
 //test
-const developer = new Developer(1, "Nguyen Van A", 1000000, 5);
+const developer:EmployeeI = new Developer(1, "Nguyen Van A", 1000000, 5);
+console.log(developer.getSalary()); //1000000
 console.log(developer.calculateSalary()); //1250000
 developer.setSalary(1500000);
 console.log(developer.calculateSalary()); //1750000
-const manager = new Manager(2, "Nguyen Van B", 2000000, 10);
+const manager:EmployeeI = new Manager(2, "Nguyen Van B", 2000000, 10);
 console.log(manager.calculateSalary()); //4000000
