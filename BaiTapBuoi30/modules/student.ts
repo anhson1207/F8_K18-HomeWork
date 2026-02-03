@@ -1,4 +1,4 @@
-interface StudentI {
+export interface StudentI {
     setName(name: string): void;
     getName(): string;
     upadate(message: string): void;

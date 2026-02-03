@@ -1,5 +1,5 @@
 import {Student} from './student.js';
-interface ClassRoomI {
+export interface ClassRoomI {
     addStudent(student: Student): void;
     removeStudent(student: Student): void;
     notify(message: string): void;
