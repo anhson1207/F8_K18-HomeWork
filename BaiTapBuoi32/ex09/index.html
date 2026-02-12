@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="vi">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>ex09</title>
+    </head>
+    <style>
+        .row {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .yellow {
+            background-color: yellow;
+        }
+        .red {
+            background-color: red;
+        }
+        .green {
+            background-color: green;
+        }
+        .text-done {
+            text-decoration: line-through;
+        }
+        .gap {
+            display: flex;
+            gap: 10px;
+        }
+    </style>
+    <body>
+        <main style="display: flex; gap: 200px; align-items: flex-start">
+            <!-- add task -->
+            <div style="width: 50%">
+                <div>
+                    <input
+                        type="text"
+                        id="taskInput"
+                        placeholder="Nhập công việc..."
+                    />
+                    <button id="addBtn">Add</button>
+                </div>
+                <ul style="display: flex; flex-direction: column; gap:10px;" id="list"></ul>
+            </div>
+            <!-- search task -->
+            <div style=" width: 50%">
+                <div>
+                    <input
+                        id="searchInput"
+                        type="text"
+                        placeholder="Search công việc..."
+                    />
+                    <label for="doneInput">
+                        <input id="doneInput" type="checkbox" />
+                        done
+                    </label>
+                </div>
+
+                <ul id="searchList"></ul>
+            </div>
+        </main>
+
+        <script src="./main.js"></script>
+    </body>
+</html>
