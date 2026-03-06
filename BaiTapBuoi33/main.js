@@ -25,7 +25,7 @@ login("admin1","123456")
     });
 
 // assignment 2
-function checkStock(productId) {
+function getProduct(productId) {
     return new Promise((resolve, reject) => {
         console.log("Kiểm tra tồn kho...");
         setTimeout(() => {
@@ -68,7 +68,7 @@ function createOrder(product){
         },1000);
     })
 }
-checkStock(1).then((product)=>{
+getProduct(1).then((product)=>{
     return processPayment(product);
 }).then((product)=>{
     return createOrder(product);
