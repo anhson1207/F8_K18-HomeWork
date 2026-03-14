@@ -390,7 +390,7 @@
                                     class="input-field"
                                     placeholder="Nguyễn"
                                 />
-                                <p class="error-msg" id="firstNameError"></p>
+                                <p class="error-msg" id="lastNameError"></p>
                             </div>
                             <div class="field">
                                 <label for="firstName">Tên</label>
@@ -400,7 +400,7 @@
                                     class="input-field"
                                     placeholder="Văn A"
                                 />
-                                <p class="error-msg" id="lastNameError"></p>
+                                <p class="error-msg" id="firstNameError"></p>
                             </div>
                         </div>
 
@@ -727,40 +727,40 @@
 
             // TODO 1: Định nghĩa registerSchema
             // const registerSchema = z.object({ ... });
-            const registerSchema = z.object({
-                lastName: z.string().min(2, "Họ phải có ít nhất 2 ký tự"),
-                firstName: z.string().min(2, "Tên phải có ít nhất 2 ký tự"),
-                email: z.string().email("Email không hợp lệ"),
-                phone: z
-                    .string()
-                    .regex(/^0\d{9}$/, "Số điện thoại không hợp lệ")
-                    .optional(),
-                role: z.enum(
-                    ["dev", "design", "pm", "other"],
-                    "Vui lòng chọn vai trò"
-                ),
-                password: z
-                    .string()
-                    .min(8, "Mật khẩu phải có ít nhất 8 ký tự")
-                    .regex(/[A-Za-z]/, "Mật khẩu phải chứa ít nhất một chữ cái")
-                    .regex(/[0-9]/, "Mật khẩu phải chứa ít nhất một chữ số"),
-                confirmPassword: z.string(),
-                terms: z
-                    .literal(true, {
+            const registerSchema = z
+                .object({
+                    firstName: z.string().min(2, "Tên phải có ít nhất 2 ký tự"),
+                    lastName: z.string().min(2, "Họ phải có ít nhất 2 ký tự"),
+                    email: z.string().email("Email không hợp lệ"),
+                    phone: z
+                        .string()
+                        .regex(/^0\d{9}$/, "Số điện thoại không hợp lệ")
+                        .optional(),
+                    role: z.enum(["dev", "design", "pm", "other"], {
+                        errorMap: () => ({ message: "Vui lòng chọn vai trò" }),
+                    }),
+                    password: z
+                        .string()
+                        .min(8, "Mật khẩu phải có ít nhất 8 ký tự")
+                        .regex(
+                            /[A-Za-z]/,
+                            "Mật khẩu phải chứa ít nhất một chữ cái"
+                        )
+                        .regex(
+                            /[0-9]/,
+                            "Mật khẩu phải chứa ít nhất một chữ số"
+                        ),
+                    confirmPassword: z.string(),
+                    terms: z.literal(true, {
                         errorMap: () => ({
                             message: "Bạn phải đồng ý với điều khoản",
                         }),
-                    })
-                    .superRefine((data, ctx) => {
-                        if (data.password !== data.confirmPassword) {
-                            ctx.addIssue({
-                                code: z.ZodIssueCode.custom,
-                                path: ["confirmPassword"],
-                                message: "Mật khẩu xác nhận không khớp",
-                            });
-                        }
                     }),
-            });
+                })
+                .refine((data) => data.password === data.confirmPassword, {
+                    message: "Mật khẩu xác nhận không khớp",
+                    path: ["confirmPassword"],
+                });
 
             // TODO 2: Hàm showError / showSuccess / clearField
             // function showError(fieldId, errorMsgId, message) { ... }
@@ -930,8 +930,8 @@
                 if (bars) {
                     bars.dataset.level = 0;
                 }
-                if (lable) {
-                    lable.textContent = "Độ mạnh mật khẩu";
+                if (label) {
+                    label.textContent = "Độ mạnh mật khẩu";
                 }
             }
         </script>
