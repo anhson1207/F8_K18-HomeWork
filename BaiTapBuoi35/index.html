@@ -383,20 +383,20 @@
                             "
                         >
                             <div class="field">
-                                <label for="firstName">Họ</label>
+                                <label for="lastName">Họ</label>
                                 <input
                                     type="text"
-                                    id="firstName"
+                                    id="lastName"
                                     class="input-field"
                                     placeholder="Nguyễn"
                                 />
                                 <p class="error-msg" id="firstNameError"></p>
                             </div>
                             <div class="field">
-                                <label for="lastName">Tên</label>
+                                <label for="firstName">Tên</label>
                                 <input
                                     type="text"
-                                    id="lastName"
+                                    id="firstName"
                                     class="input-field"
                                     placeholder="Văn A"
                                 />
@@ -728,8 +728,8 @@
             // TODO 1: Định nghĩa registerSchema
             // const registerSchema = z.object({ ... });
             const registerSchema = z.object({
-                firstName: z.string().min(2, "Tên phải có ít nhất 2 ký tự"),
                 lastName: z.string().min(2, "Họ phải có ít nhất 2 ký tự"),
+                firstName: z.string().min(2, "Tên phải có ít nhất 2 ký tự"),
                 email: z.string().email("Email không hợp lệ"),
                 phone: z
                     .string()
