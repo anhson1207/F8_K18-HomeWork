@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <!-- Bai 1 -->
+     <h2>Lưu và đọc tên người dùng</h2>
+    <input type="text" id="username" placeholder="Nhập tên của bạn">
+    <button id="saveBtn">Lưu tên</button>
+    <button id="loadBtn">Đọc tên</button>
+    <p id="result"></p>
+    <!-- Bai 2 -->
+     <h1 id="counter"></h1>
+     <button id="resetBtn">Reset</button>
+    <!-- Bai 3 -->
+     <h2>Danh sách sản phẩm</h2>
+    <div id="productList" class="product-grid"></div>
+    <h2>Giỏ hàng</h2>
+    <p id="cartCount"></p>
+    <ul id="cartList" class="cart-list"></ul>
+    <button class="btn-clear" onclick="clearCart()">Xóa giỏ hàng</button>
+    <script src="./main.js"></script>
+</body>
+</html>
